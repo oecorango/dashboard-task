@@ -1,0 +1,1 @@
+export const TABLE_HEADERS = ['NAME', 'TYPE', 'STATUS', 'SITE']
