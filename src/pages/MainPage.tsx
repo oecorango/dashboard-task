@@ -1,38 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { fetchTestsData } from '../api/fetchDashboardData';
-import { TABLE_HEADERS } from '../constants';
-import { Tests } from '../interface';
+import { Search } from '../components/Search';
+import { TestsList } from '../components/TestsList';
+import { Context } from '../context/context';
 import styles from './MainPage.module.scss';
 
 export const MainPage = () => {
-  const [tests, setTests] = useState<Tests[]>()
+  const { tests, setTests, setFilter, setSearch, setCountTests } =
+    useContext(Context);
+
+  const handleReset = () => {
+    setFilter('');
+    setSearch('');
+    tests?.length ? setCountTests(tests?.length) : setCountTests(0);
+  };
 
   useEffect(() => {
     fetchTestsData()
-      .then(data => setTests(data))
-      .catch(err => console.warn(err));
-  }, [])
+      .then((data) => {
+        setTests(data);
+        if (data?.length) setCountTests(data?.length);
+      })
+      .catch((err) => console.warn(err));
+  }, [setCountTests, setTests]);
 
   return (
-    <>
-      <h1>DASHBOARD</h1>
-      <table>
-        <tr>
-          {TABLE_HEADERS.map((name, index) => (
-            <th key={index}>{name}</th>
-          ))}
-        </tr>
-        {tests?.map((test, index) => (
-          <tr className={styles.test} key={index}>
-            <td>{test.name}</td>
-            <td>{test.type}</td>
-            <td>{test.status}</td>
-            <td>{test.site}</td>
-            <td>{test.results ? 'Results' : 'Finalize'}</td>
-          </tr>
-      ))}
-      </table>
-      
-    </>
-  )
-}
+    <main>
+      <h1 className={styles.header}>DASHBOARD</h1>
+      <Search />
+      <TestsList handleReset={handleReset} />
+    </main>
+  );
+};

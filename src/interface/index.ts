@@ -30,5 +30,6 @@ export type Tests = {
   type: Type;
   status: Status;
   site: string;
+  siteId: number;
   results: boolean;
 }

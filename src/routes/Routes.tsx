@@ -6,16 +6,20 @@ import { ResultsPage } from "../pages/ResultsPage";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <MainPage />,
+    path: "/",
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/results',
+        path: "/",
+        index: true,
+        element: <MainPage />,
+      },
+      {
+        path: "/results",
         element: <ResultsPage />,
       },
       {
-        path: '/finalize',
+        path: "/finalize",
         element: <FinalizePage />,
       },
     ],

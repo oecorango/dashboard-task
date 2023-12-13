@@ -25,13 +25,15 @@ export const fetchTestsData = async () => {
         type: test.type,
         status: test.status,
         site: site ? site.url : 'Site not found',
+        siteId: site ? site.id : 1,
         results: false
       }
     });
-
+    console.log(data)
     return data;
 
   } catch (err) {
     console.warn(err)
   }
+  return null;
 }

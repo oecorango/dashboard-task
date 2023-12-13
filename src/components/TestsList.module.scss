@@ -1,0 +1,119 @@
+.head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
+  padding: 0 12px;
+}
+
+.cellHead {
+  text-align: start;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #999999;
+}
+
+.itemRed,
+.itemBlue,
+.itemBlueLight {
+  display: grid;
+  align-items: center;
+  margin-bottom: 7px;
+  padding: 0 12px;
+  border-radius: 3px;
+  gap: 7px;
+  width: 100%;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  height: 70px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: 0 0 20px #00000026;
+  }
+  :last-child {
+    margin-left: auto;
+  }
+}
+
+.itemRed {
+  border-left: solid 4px #e14165;
+}
+
+.itemBlue {
+  border-left: solid 4px #8686ff;
+}
+
+.itemBlueLight {
+  border-left: solid 4px #c2c2ff;
+}
+
+.cellHeadSort {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #999999;
+  p {
+    padding-right: 7px;
+  }
+}
+
+.cellName {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cellType {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.brownType,
+.greenType,
+.orangeType,
+.redType {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.brownType {
+  color: #5c5c5c;
+}
+
+.greenType {
+  color: #1bda9d;
+}
+
+.orangeType {
+  color: #ff8346;
+}
+
+.redType {
+  color: #fe4848;
+}
+
+.cellURL {
+  font-size: 12px;
+  font-weight: 400;
+  color: #5c5c5c;
+}
+
+.row {
+  height: 70px;
+  background-color: #fff;
+}
+
+.noSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+}
