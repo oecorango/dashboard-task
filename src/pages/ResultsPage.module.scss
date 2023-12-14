@@ -6,9 +6,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  :last-child {
-    margin-top: auto;
-  }
 }
 
 .h2 {

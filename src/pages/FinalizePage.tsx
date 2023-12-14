@@ -22,15 +22,11 @@ export const FinalizePage = () => {
   }, [id]);
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.header}>Finalize</h1>
-      <h2>Spring promotion</h2>
+      <h2 className={styles.h2}>Spring promotion</h2>
 
-      <ItemTest
-        test={test}
-        handleNavigate={() => console.log('hello world')}
-      ></ItemTest>
-
+      <ItemTest test={test} handleNavigate={() => console.log('hello world')} />
       <ButtonReturn />
     </main>
   );
