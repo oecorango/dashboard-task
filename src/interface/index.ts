@@ -4,7 +4,7 @@ enum Type {
   MVT = "MVT"
 }
 
-enum Status {
+export enum Status {
   DRAFT = "DRAFT",
   ONLINE = "ONLINE",
   PAUSED = "PAUSED",
@@ -29,7 +29,16 @@ export type Tests = {
   name: string;
   type: Type;
   status: Status;
+  statusSort: number;
   site: string;
   siteId: number;
   results: boolean;
 }
+
+type SortType = 'ADS' | 'DESC';
+export type SortName = 'NAME' | 'TYPE' | 'STATUS' | 'SITE' | '';
+
+export type SortBy = {
+  name: SortName;
+  type: SortType;
+};

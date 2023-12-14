@@ -1,5 +1,6 @@
 import { BASE_URL, SITES, TESTS } from "../constants/api";
-import { Site, Test } from "../interface";
+import { Site, Status, Test } from "../interface";
+import { sliceURL } from "../utils";
 
 
 
@@ -17,16 +18,24 @@ export const fetchTestsData = async () => {
 
     const data = tests.map((test) => {
       const id = test.siteId;
-      const site = sites.find((site) => site.id === id)
+      const site = sites.find((site) => site.id === id);
+      const results = test.status === 'DRAFT' ? false : true
+      const statusSort = (status: Status) => {
+        if (status === 'ONLINE') return 1;
+        if (status === 'PAUSED') return 2;
+        if (status === 'STOPPED') return 3;
+        return 4
+      }
 
       return {
         id: test.id,
         name: test.name,
         type: test.type,
         status: test.status,
-        site: site ? site.url : 'Site not found',
+        statusSort: statusSort(test.status),
+        site: site ? sliceURL(site.url) : 'Site not found',
         siteId: site ? site.id : 1,
-        results: false
+        results,
       }
     });
     console.log(data)

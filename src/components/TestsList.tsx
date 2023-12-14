@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Context } from '../context/context';
-import { convertFirstCharToUpperCase, sliceURL } from '../utils';
+import { useSort } from '../hooks/useSort';
+import { convertFirstCharToUpperCase } from '../utils';
 import { Button } from './Button';
-import { ArrowIcon } from './svg/ArrowIcon';
+import { HeadTable } from './HeadTable';
 import styles from './TestsList.module.scss';
 
 type Props = {
@@ -11,26 +13,24 @@ type Props = {
 
 export const TestsList = ({ handleReset }: Props) => {
   const { tests, filter } = useContext(Context);
+  const navigate = useNavigate();
+
+  const handleNavigate = (val: boolean, id: number) => {
+    val ? navigate(`results/${id}`) : navigate(`finalize/${id}`);
+  };
 
   const filterTest = tests?.filter((test) =>
     test.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  const handleClick = () => {};
+  const handleSort = useSort();
 
   return (
     <>
       {filterTest?.length ? (
         <>
           <div className={styles.head}>
-            <div className={styles.cellHead}>NAME</div>
-            <div className={styles.cellHead}>TYPE</div>
-            <div className={styles.cellHeadSort}>
-              <p>STATUS</p>
-              <ArrowIcon />
-            </div>
-            <div className={styles.cellHead}>SITE</div>
-            <div className={styles.cellHead}></div>
+            <HeadTable handleSort={handleSort} filterTest={filterTest} />
           </div>
           {filterTest.map((test, index) => (
             <div
@@ -60,11 +60,11 @@ export const TestsList = ({ handleReset }: Props) => {
               >
                 {convertFirstCharToUpperCase(test.status)}
               </div>
-              <div className={styles.cellURL}>{sliceURL(test.site)}</div>
+              <div className={styles.cellURL}>{test.site}</div>
               <Button
-                name={test.type ? 'Finalize' : 'Results'}
+                name={test.results ? 'Results' : 'Finalize'}
                 type={test.results}
-                handleClick={handleClick}
+                handleClick={() => handleNavigate(test.results, test.id)}
               />
             </div>
           ))}

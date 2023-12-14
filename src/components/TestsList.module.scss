@@ -6,14 +6,6 @@
   padding: 0 12px;
 }
 
-.cellHead {
-  text-align: start;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 13px;
-  color: #999999;
-}
-
 .itemRed,
 .itemBlue,
 .itemBlueLight {
@@ -47,19 +39,6 @@
 
 .itemBlueLight {
   border-left: solid 4px #c2c2ff;
-}
-
-.cellHeadSort {
-  display: flex;
-  align-items: center;
-  text-align: start;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 13px;
-  color: #999999;
-  p {
-    padding-right: 7px;
-  }
 }
 
 .cellName {

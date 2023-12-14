@@ -1,0 +1,22 @@
+.cellHead {
+  text-align: start;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #999999;
+  cursor: pointer;
+}
+
+.cellHeadSort {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #999999;
+  cursor: pointer;
+  p {
+    padding-right: 7px;
+  }
+}
