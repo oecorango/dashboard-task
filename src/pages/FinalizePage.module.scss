@@ -1,0 +1,16 @@
+.header {
+  padding-top: 42px;
+  padding-bottom: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  :last-child {
+    margin-top: auto;
+  }
+}
+
+.h2 {
+  padding-bottom: 50px;
+}

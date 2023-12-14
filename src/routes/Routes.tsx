@@ -1,25 +1,25 @@
-import { createBrowserRouter } from "react-router-dom";
-import { ErrorPage } from "../pages/ErrorPage";
-import { FinalizePage } from "../pages/FinalizePage";
-import { MainPage } from "../pages/MainPage";
-import { ResultsPage } from "../pages/ResultsPage";
+import { createBrowserRouter } from 'react-router-dom';
+import { ErrorPage } from '../pages/ErrorPage';
+import { FinalizePage } from '../pages/FinalizePage';
+import { MainPage } from '../pages/MainPage';
+import { ResultsPage } from '../pages/ResultsPage';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: '/',
         index: true,
         element: <MainPage />,
       },
       {
-        path: "/results",
+        path: 'results/:id',
         element: <ResultsPage />,
       },
       {
-        path: "/finalize",
+        path: 'finalize/:id',
         element: <FinalizePage />,
       },
     ],

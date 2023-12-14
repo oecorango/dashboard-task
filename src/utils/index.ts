@@ -1,5 +1,5 @@
-export const convertFirstCharToUpperCase = (str: string) => {
-  if (str.length > 3) {
+export const convertFirstCharToUpperCase = (str: string | undefined) => {
+  if (str && str.length > 3) {
     return str[0].toLocaleUpperCase() + str.slice(1).toLowerCase();
   }
   return str;

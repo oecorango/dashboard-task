@@ -2,12 +2,12 @@
   display: flex;
   border: solid 1px #ebebeb;
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 15px;
   height: 45px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  * {
+  svg {
     font-size: 14px;
     margin: 12px;
   }
@@ -20,6 +20,8 @@
     }
   }
   p {
+    font-size: 14px;
+    margin: 14px;
     color: #d1d1d1;
   }
 }

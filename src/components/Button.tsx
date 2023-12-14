@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 
 type Props = {
   name: string;
-  type: boolean;
+  type: boolean | undefined;
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 

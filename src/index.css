@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito:wght@700&family=Roboto:wght@400;500&display=swap');
 
 * {
   margin: 0;
@@ -7,18 +7,27 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fafafa;
 }
 
 main {
   margin: 0 auto;
   max-width: 1054px;
+  min-height: 742px;
+  padding: 5px 52px 0 48px;
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 32px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
 }

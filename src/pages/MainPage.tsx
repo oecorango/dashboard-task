@@ -26,7 +26,7 @@ export const MainPage = () => {
 
   return (
     <main>
-      <h1 className={styles.header}>DASHBOARD</h1>
+      <h1 className={styles.header}>Dashboard</h1>
       <Search />
       <TestsList handleReset={handleReset} />
     </main>
